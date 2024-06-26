@@ -29,38 +29,34 @@ const select = document.getElementById("select_role");
 const employees = [];
 
 class Employees {
-  constructor(id, name) {
-    (this.id = id), (this.name = name);
+  constructor(id, name, salary = 700) {
+    this.id = id;
+    this.name = name;
+    this.salary = salary;
   }
 
   // methods
   addEmployee(object) {
     employees.push(object);
   }
-
-  role() {
-    //...
-  }
 }
 
 class Manager extends Employees {
-  constructor(id, name, salary = 700) {
-    super(id, name);
-    this.salary = salary;
+  constructor(id, name, salary) {
+    super(id, name, salary);
   }
 
-  salary() {
+  increaseSalary() {
     this.salary += 200;
   }
 }
 
 class Contractor extends Employees {
-  constructor(id, name, salary = 700) {
-    super(id, name);
-    this.salary = salary;
+  constructor(id, name, salary) {
+    super(id, name, salary);
   }
 
-  salary() {
+  increaseSalary() {
     this.salary += 100;
   }
 }
@@ -82,7 +78,7 @@ const buttonTest = button_form.addEventListener("click", () => {
     return false;
   } else if (select.value == "manager_role") {
     const manager = new Manager(input_id.value, input_name.value);
-    // manager.salary();
+    manager.increaseSalary();
     manager.addEmployee(manager);
 
     //   document.getElementById("employees_list").innerHTML(employee);
@@ -112,7 +108,7 @@ const buttonTest = button_form.addEventListener("click", () => {
     // }
   } else if (select.value == "contractor_role") {
     const employee = new Contractor(input_id.value, input_name.value);
-    //employee.salary();
+    employee.increaseSalary();
     employee.addEmployee(employee);
 
     employee_div.innerHTML = "";
