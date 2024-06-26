@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>OOP challenge 2</title>
+  </head>
+
+  <body>
+    <div class="component_block">
+      <div class="leftSide">
+        <label class="label_id">Id :</label>
+        <input type="text" id="input_id" class="input_id" />
+
+        <br />
+
+        <label class="label_name">Name :</label>
+        <input type="text" id="input_name" class="input_name" />
+
+        <br />
+
+        <select id="select_role" class="select_role_class">
+          <option>Select Role (Employee by default)</option>
+          <option value="manager_role">Manager</option>
+          <option value="contractor_role">Contractor</option>
+        </select>
+
+        <button id="button" class="button_form">Create Employee</button>
+      </div>
+
+      <div id="employees_list_div" class="RightSide">
+        <h1 class="title_list_employees">List of employees :</h1>
+        <div id="employees_list"></div>
+      </div>
+    </div>
+
+    <script src="challange2.js"></script>
+  </body>
+</html>
